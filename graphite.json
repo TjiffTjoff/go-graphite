@@ -1,0 +1,7 @@
+{
+  "server": "192.168.32.94",
+  "port": "2003",
+  "interval": 60,
+  "script": "C:\\users\\viktor\\typeperf\\getCounters.bat",
+  "counters": [ "cpu", "memory", "network.tx", "network.rx" ]
+}
