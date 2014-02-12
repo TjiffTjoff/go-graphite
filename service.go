@@ -58,7 +58,7 @@ func main() {
 		}
 		return
 	} else {
-    fmt.Println("Usage: go-graphite --[install|remote|run|start|stop]")
+    fmt.Println("Usage: go-graphite --[install|remove|run|start|stop]")
   }
 	err = s.Run(func() error {
 		// start
