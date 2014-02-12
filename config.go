@@ -13,11 +13,11 @@ type configuration struct {
   Counters []string
 }
 
-func getConfiguration() (configuration, error) {
+func getConfiguration(file string) (configuration, error) {
   var config configuration
 
   //Open and read configuration from file
-  configFile := "graphite.json"
+  configFile := file
   configJson, err := ioutil.ReadFile(configFile)
   if err != nil {
     return config, err

@@ -8,12 +8,15 @@ import (
   "os/exec"
   "time"
   "fmt"
+  "path/filepath"
 )
 
-func main() {
+func graphite() {
+  //Find actual bin dir. Needed for service execution
+  workingDir := filepath.Dir(os.Args[0])
 
   //Set up log file
-  logFile, err := os.OpenFile("graphite.log", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
+  logFile, err := os.OpenFile(workingDir+"/graphite.log", os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666)
   if err != nil {
     log.Println(err)
     os.Exit(1)
@@ -23,7 +26,7 @@ func main() {
   log.SetOutput(logFile)
 
   //Read configuration from json
-  config, err := getConfiguration()
+  config, err := getConfiguration(workingDir+"/graphite.json")
   if err != nil {
     log.Printf("Configuration error: %s\n", err)
     os.Exit(1)
