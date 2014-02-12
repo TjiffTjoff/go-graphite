@@ -10,7 +10,7 @@ var srvLog service.Logger
 
 func main() {
 	var name = "go-graphite"
-	var displayName = "Graphite client written in Golang"
+	var displayName = "Graphite client"
 	var desc = "Collects metrics and sends them to a Graphite server"
 
 	var s, err = service.NewService(name, displayName, desc)
